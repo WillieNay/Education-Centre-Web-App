@@ -18,7 +18,7 @@ st.markdown("""
         background-color: #f0f4f8;
     }
     
-    /* Make headings more visible with contrasting colors */
+   
     h1 {
         color: #1e3a8a;
         font-size: 2.5rem;
@@ -31,14 +31,13 @@ st.markdown("""
         font-weight: 600;
     }
     
-    /* Paragraph text styling for better visibility */
+
     p, li {
         color: #1f2937;
         font-size: 1.05rem;
         line-height: 1.6;
     }
-    
-    /* Container styling for content sections */
+  
     .content-section {
         background-color: white;
         border-radius: 0.5rem;
@@ -47,7 +46,7 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
     
-    /* Create contrast for dividers */
+
     hr {
         height: 3px;
         background-color: #3b82f6;
@@ -55,7 +54,7 @@ st.markdown("""
         margin: 2rem 0;
     }
     
-    /* Improve contact form readability */
+
     form input, form textarea {
         background-color: #f9fafb;
         color: #1f2937;
@@ -66,7 +65,7 @@ st.markdown("""
         font-size: 1rem;
     }
     
-    /* Make button more visible */
+
     form button {
         background-color: #3b82f6;
         color: white;
@@ -82,7 +81,7 @@ st.markdown("""
         background-color: #2563eb;
     }
     
-    /* Table styling for contrast */
+  
     table {
         width: 100%;
         border-collapse: collapse;
@@ -129,7 +128,7 @@ except:
 try:
     animation_lottie = load_lottiteurl("https://lottie.host/6e1f213d-a396-46d3-9428-4b7923a53488/XwpEHXq62v.json")
     img_studying_pic = Image.open("45 Hilarious Memes For When You Need A Laugh.jpeg")
-    img_harry_potter_pic = Image.open("7 secretos de belleza que Emma Watson aplica todos los días - Cultura Colectiva.jpeg")
+    img_harry_potter_pic = Image.open("7 secretos de belleza que Emma Watson aplica todos los días - Cultura Colectiva.jpeg")
 except Exception as e:
     st.warning(f"Some images could not be loaded. The app will continue without them.")
     animation_lottie = None
