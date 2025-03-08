@@ -2,7 +2,11 @@ from PIL import Image
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
+import os
+import urllib.request
+from io import BytesIO
 
+# Page configuration with a more visually appealing icon and wider layout
 st.set_page_config(
     page_title="MOE Learning Centre",
     page_icon="📚",
@@ -12,10 +16,66 @@ st.set_page_config(
 
 # Function to load Lottie animations
 def load_lottie_url(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
+    try:
+        r = requests.get(url)
+        if r.status_code != 200:
+            return None
+        return r.json()
+    except:
+        # Return a default animation data if the URL fails
+        return {
+            "v": "5.5.7",
+            "fr": 60,
+            "ip": 0,
+            "op": 180,
+            "w": 1000,
+            "h": 1000,
+            "nm": "Education",
+            "ddd": 0,
+            "assets": [],
+            "layers": [
+                {
+                    "ddd": 0,
+                    "ind": 1,
+                    "ty": 4,
+                    "nm": "Book",
+                    "sr": 1,
+                    "ks": {
+                        "o": {"a": 0, "k": 100},
+                        "p": {"a": 0, "k": [500, 500, 0]},
+                        "a": {"a": 0, "k": [0, 0, 0]},
+                        "s": {"a": 0, "k": [100, 100, 100]}
+                    },
+                    "shapes": [
+                        {
+                            "ty": "rc",
+                            "d": 1,
+                            "p": {"a": 0, "k": [0, 0]},
+                            "s": {"a": 0, "k": [200, 300]},
+                            "r": {"a": 0, "k": 0},
+                            "nm": "Rectangle",
+                            "mn": "ADBE Vector Shape - Rect",
+                            "hd": false
+                        },
+                        {
+                            "ty": "fl",
+                            "c": {"a": 0, "k": [0.267, 0.38, 0.929, 1]},
+                            "o": {"a": 0, "k": 100},
+                            "r": 1,
+                            "bm": 0,
+                            "nm": "Fill 1",
+                            "mn": "ADBE Vector Graphic - Fill",
+                            "hd": false
+                        }
+                    ],
+                    "op": 180
+                }
+            ]
+        }
+
+# Function to load a placeholder image
+def get_placeholder_image(width=500, height=400):
+    return f"https://via.placeholder.com/{width}x{height}/4361EE/FFFFFF?text=MOE+Learning+Centre"
 
 # Custom CSS to make the app more vibrant and modern
 def apply_custom_styles():
@@ -127,7 +187,6 @@ def apply_custom_styles():
             border-radius: 10px;
             width: 100%;
             object-fit: cover;
-            height: 300px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
         
@@ -159,10 +218,12 @@ def apply_custom_styles():
 # Apply custom styles
 apply_custom_styles()
 
-# Load assets
+# Load assets - Using URLs instead of local files to avoid file not found errors
 animation_lottie = load_lottie_url("https://lottie.host/6e1f213d-a396-46d3-9428-4b7923a53488/XwpEHXq62v.json")
-img_studying_pic = Image.open("45 Hilarious Memes For When You Need A Laugh.jpeg")
-img_harry_potter_pic = Image.open("7 secretos de belleza que Emma Watson aplica todos los días - Cultura Colectiva.jpeg")
+
+# Use placeholder images instead of local files
+english_img_url = get_placeholder_image(500, 300)
+consulting_img_url = get_placeholder_image(500, 300)
 
 # Header section with gradient effect
 st.markdown('<div class="wave-text"><h2>👋 Welcome to MOE Learning Centre</h2></div>', unsafe_allow_html=True)
@@ -222,7 +283,7 @@ with tab1:
     col1, col2 = st.columns([1, 2])
     with col1:
         st.markdown('<div class="rounded-image">', unsafe_allow_html=True)
-        st.image(img_harry_potter_pic)
+        st.image(english_img_url)
         st.markdown('</div>', unsafe_allow_html=True)
     with col2:
         st.markdown("""
@@ -273,7 +334,7 @@ with tab4:
     col1, col2 = st.columns([1, 2])
     with col1:
         st.markdown('<div class="rounded-image">', unsafe_allow_html=True)
-        st.image(img_studying_pic)
+        st.image(consulting_img_url)
         st.markdown('</div>', unsafe_allow_html=True)
     with col2:
         st.markdown("""
@@ -315,7 +376,8 @@ location_info = """
     <p>We're located in a convenient, central location:</p>
     <p>123 Education Street<br>Yangon, Myanmar</p>
     <h4>Opening Hours</h4>
-    <p>Monday - Saturday<br>
+    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+    Saturday: 9:00 AM - 1:00 PM<br>
     Sunday: Closed</p>
 </div>
 """
