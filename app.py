@@ -5,7 +5,6 @@ from streamlit_lottie import st_lottie
 
 st.set_page_config(page_title="MOE Learning Centre", page_icon="📚", layout="wide")
 
-def load_lottiteurl(url):
 
 def load_lottiteurl(url):
     r = requests.get(url)
