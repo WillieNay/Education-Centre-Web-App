@@ -21,11 +21,11 @@ local_css("style.css")
 
 
 animation_lottie = "https://lottie.host/6e1f213d-a396-46d3-9428-4b7923a53488/XwpEHXq62v.json"
-img_studying_pic = Image.open("45 Hilarious Memes For When You Need A Laugh.jpeg")
-img_harry_potter_pic = Image.open("7 secretos de belleza que Emma Watson aplica todos los días - Cultura Colectiva.jpeg")
+img_studying_pic = Image.open("meme.jpeg")
+img_harry_potter_pic = Image.open("harry potter.jpeg")
 
 
-st.subheader("Hello, Welcome to MOE Learning Centre :wave:")
+st.subheader("Hello, Welcome to MOE Learning Centre")
 st.title("The Best Learning Environment for your children")
 st.write("We provide various education service such as tutoring classes, consultation and academic ciriculum")
 st.write(" For further inquiries > lilymoe74@gmail.com, +95 9798743047 ")
