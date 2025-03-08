@@ -18,7 +18,6 @@ st.markdown("""
         background-color: #f0f4f8;
     }
     
-   
     h1 {
         color: #1e3a8a;
         font-size: 2.5rem;
@@ -31,7 +30,6 @@ st.markdown("""
         font-weight: 600;
     }
     
-
     p, li {
         color: #1f2937;
         font-size: 1.05rem;
@@ -46,7 +44,6 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
     
-
     hr {
         height: 3px;
         background-color: #3b82f6;
@@ -54,7 +51,6 @@ st.markdown("""
         margin: 2rem 0;
     }
     
-
     form input, form textarea {
         background-color: #f9fafb;
         color: #1f2937;
@@ -65,7 +61,6 @@ st.markdown("""
         font-size: 1rem;
     }
     
-
     form button {
         background-color: #3b82f6;
         color: white;
@@ -81,7 +76,6 @@ st.markdown("""
         background-color: #2563eb;
     }
     
-  
     table {
         width: 100%;
         border-collapse: collapse;
@@ -111,14 +105,26 @@ st.markdown("""
     a:hover {
         text-decoration: underline;
     }
+    
+    /* Image styling for better blending */
+    img {
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Remove image backgrounds */
+    .img-no-bg {
+        background-color: transparent !important;
+        mix-blend-mode: multiply;
+    }
 </style>
 """, unsafe_allow_html=True)
-
 
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
 
 try:
     local_css("style.css")
@@ -127,8 +133,8 @@ except:
 
 try:
     animation_lottie = load_lottiteurl("https://lottie.host/6e1f213d-a396-46d3-9428-4b7923a53488/XwpEHXq62v.json")
-    img_studying_pic = Image.open("45 Hilarious Memes For When You Need A Laugh.jpeg")
-    img_harry_potter_pic = Image.open("7 secretos de belleza que Emma Watson aplica todos los días - Cultura Colectiva.jpeg")
+    img_studying_pic = Image.open("studying_image.png")  # Assuming transparent PNG version
+    img_harry_potter_pic = Image.open("student_image.png")  # Assuming transparent PNG version
 except Exception as e:
     st.warning(f"Some images could not be loaded. The app will continue without them.")
     animation_lottie = None
@@ -151,16 +157,15 @@ with st.container():
     with left_column:
         st.header("Our Services")
         st.write('##')
-        st.write (
+        st.write(
             """
             Currently, we provide basic English, Math Science classes for various grades:
             - We follow a variety of curriculums provided by Cambridge, Pearson, and many more
             - Other courses such as summer school, English language speaking, IT and British Council level exam focus classes.
 
-
             If you are interested, contact us for further detailed inquiries.
            """
-         )
+        )
         
         st.write("[Facebook Page >](https://www.facebook.com/profile.php?id=100086756350545&mibextid=LQQJ4d)")
     
@@ -182,7 +187,12 @@ with st.container():
     image_column, text_column = st.columns((1,2))
     with image_column:
         if img_harry_potter_pic:
+            st.markdown('<div class="img-no-bg">', unsafe_allow_html=True)
             st.image(img_harry_potter_pic)
+            st.markdown('</div>', unsafe_allow_html=True)
+        else:
+            # Fallback if image is not available
+            st.image("https://via.placeholder.com/400x300?text=Student+Image", use_column_width=True)
     
     with text_column:
         st.subheader("English Language Courses")
@@ -225,7 +235,12 @@ with st.container():
     image_column, text_column = st.columns((1,2))
     with image_column:
         if img_studying_pic:
+            st.markdown('<div class="img-no-bg">', unsafe_allow_html=True)
             st.image(img_studying_pic)
+            st.markdown('</div>', unsafe_allow_html=True)
+        else:
+            # Fallback if image is not available
+            st.image("https://via.placeholder.com/400x300?text=Studying+Image", use_column_width=True)
     
     with text_column:
         st.subheader("Consulting")
@@ -250,7 +265,7 @@ with st.container():
     st.write("##")
 
     contact_info = """
-    <form action="https://formsubmit.co/YOUR@MAIL.COM" method="POST">
+    <form action="https://formsubmit.co/lilymoe74@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Your email" required>
