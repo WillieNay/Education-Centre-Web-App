@@ -21,8 +21,8 @@ local_css("style.css")
 
 
 animation_lottie = "https://lottie.host/6e1f213d-a396-46d3-9428-4b7923a53488/XwpEHXq62v.json"
-img_studying_pic = Image.open("images/45 Hilarious Memes For When You Need A Laugh.jpeg")
-img_harry_potter_pic = Image.open("images/7 secretos de belleza que Emma Watson aplica todos los días - Cultura Colectiva.jpeg")
+img_studying_pic = Image.open("45 Hilarious Memes For When You Need A Laugh.jpeg")
+img_harry_potter_pic = Image.open("7 secretos de belleza que Emma Watson aplica todos los días - Cultura Colectiva.jpeg")
 
 
 st.subheader("Hello, Welcome to MOE Learning Centre :wave:")
