@@ -26,7 +26,7 @@ img_harry_potter_pic = Image.open("harry potter.jpeg")
 
 
 st.subheader("Hello, Welcome to MOE Learning Centre")
-st.title("The Best Learning Environment for your children")
+st.title("The best learning environment for your children")
 st.write("We provide various education service such as tutoring classes, consultation and academic ciriculum")
 st.write(" For further inquiries > lilymoe74@gmail.com, +95 9798743047 ")
 
