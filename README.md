@@ -1,2 +1,111 @@
-# Education Centre Web App
- # MOE Learning Centre Website  Welcome to the repository for the **MOE Learning Centre** website, developed using **Streamlit**. This application provides a user-friendly interface for showcasing services, classes, and contact information for MOE Learning Centre, offering the best learning environment for children.  ---  ## Features  ### 1. Home Page - Welcomes visitors with a friendly greeting and introduces the MOE Learning Centre. - Provides a brief overview of the services offered, including tutoring, consultation, and academic curriculum support.  ### 2. Services Section - Highlights key services provided:   - English, Math, and Science courses for Grades 2 to 10.   - Summer school, IT, and British Council exam-focused classes.   - Consulting services for high school graduates (guidance on majors, prerequisites, and studying abroad).  ### 3. Classes Section - Detailed descriptions of available courses:   - **English Courses**: Textbooks from Pearson and Cambridge, preparation for Cambridge Level Tests.   - **Science Courses**: Practical lab time and textbooks from Macmillan/McGraw Hill.   - **Math Courses**: Materials from Cambridge and My Pals Are Here.  ### 4. Contact Section - A form for visitors to send inquiries directly. - Provides contact information for further inquiries.  ---  ## Requirements  To run this application locally, ensure you have the following installed:  - **Python 3.7+** - **Streamlit**: Install via `pip install streamlit` - **Additional Libraries**:   - `Pillow`   - `requests`   - `streamlit-lottie`  ---  ## File Structure app.py: Main application script. style/: Contains custom CSS for styling the website. images/: Folder for images displayed on the website. README.md: Documentation for the project.  ---  ## Key Components 1. Animations and Images Lottie Animations: Adds dynamic visuals using Lottie animations. Static Images: Displays images for the classes and consulting services. 2. Custom Styling Custom CSS for enhancing the look and feel of the website. 3. Interactive Form A contact form that allows users to send messages to the centre.  ---  ## Acknowledgments Streamlit: For building interactive web applications. Lottie: For providing engaging animations. Pillow: For image processing.
+# MOE Learning Centre Website
+
+This project is a website for MOE Learning Centre, an educational center offering tutoring classes, consultation, and academic curriculum development. It is built using Python and the Streamlit library.
+
+## Table of Contents
+
+- [Project Description](#project-description)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Description
+
+This project develops a dynamic and visually appealing website for MOE Learning Centre using Streamlit. The website showcases the center's educational services, including tutoring classes, consultation, and academic curriculum. It features interactive elements like animations, image displays, and a contact form to enhance user engagement. The website aims to provide a comprehensive overview of the center's offerings and facilitate inquiries from prospective students and parents.
+
+## Features
+
+- **Interactive Web Interface:** Built with Streamlit, providing a user-friendly and responsive experience.
+- **Service Showcase:** Detailed descriptions of tutoring classes, consultation, and curriculum development services.
+- **Course Information:** Comprehensive information about English, Science, and Math courses, including grade levels and curriculum details.
+- **Visual Appeal:** Uses animations (Lottie) and images to enhance the website's visual appeal.
+- **Contact Form:** Integrated contact form for easy communication.
+- **Custom Styling:** Custom CSS for a tailored website appearance.
+- **Facebook Page Link:** Easy access to the learning center's Facebook page.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.6 or higher
+- pip (Python package installer)
+
+### Installation
+
+1.  Clone the repository:
+
+    ```bash
+    git clone <repository_url>
+    cd <repository_directory>
+    ```
+
+2.  Create a virtual environment (recommended):
+
+    ```bash
+    python -m venv venv
+    ```
+
+3.  Activate the virtual environment:
+
+    -   **Windows:**
+
+        ```bash
+        venv\Scripts\activate
+        ```
+
+    -   **macOS/Linux:**
+
+        ```bash
+        source venv/bin/activate
+        ```
+
+4.  Install the required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    (If you don't have a requirements.txt file, create one with the following content and then run the command above)
+    ```
+    streamlit
+    requests
+    Pillow
+    streamlit-lottie
+    ```
+
+### Running the Application
+
+1.  Navigate to the project directory.
+2.  Run the Streamlit application:
+
+    ```bash
+    streamlit run app.py
+    ```
+
+    (Replace `app.py` with the name of your main Python file if it's different.)
+
+3.  The application will open in your default web browser.
+
+## Usage
+
+-   Navigate through the sections to explore the services and courses offered by MOE Learning Centre.
+-   Use the contact form to send inquiries.
+-   Click the Facebook link to visit the center's Facebook page.
+
+
+## Dependencies
+
+-   streamlit
+-   requests
+-   Pillow (PIL)
+-   streamlit-lottie
+
+## Author
+- Nay Linn Htin/ Willie Nay
