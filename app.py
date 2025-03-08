@@ -13,7 +13,6 @@ def load_lottiteurl(url):
 
 st.markdown("""
 <style>
-    /* Improve background colors */
     .stApp {
         background-color: #f0f4f8;
     }
@@ -95,7 +94,7 @@ st.markdown("""
         color: #1f2937;
     }
     
-    /* Link styling for better visibility */
+
     a {
         color: #2563eb;
         text-decoration: none;
@@ -106,7 +105,7 @@ st.markdown("""
         text-decoration: underline;
     }
     
-    /* Image styling for better blending */
+ 
     img {
         border-radius: 0.5rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
@@ -114,7 +113,7 @@ st.markdown("""
         height: auto;
     }
     
-    /* Remove image backgrounds */
+
     .img-no-bg {
         background-color: transparent !important;
         mix-blend-mode: multiply;
@@ -133,8 +132,8 @@ except:
 
 try:
     animation_lottie = load_lottiteurl("https://lottie.host/6e1f213d-a396-46d3-9428-4b7923a53488/XwpEHXq62v.json")
-    img_studying_pic = Image.open("studying_image.png")  # Assuming transparent PNG version
-    img_harry_potter_pic = Image.open("student_image.png")  # Assuming transparent PNG version
+    img_studying_pic = Image.open("45 Hilarious Memes For When You Need A Laugh.jpeg")  
+    img_harry_potter_pic = Image.open("7_secretos_de_belleza_que_Emma_Watson_aplica_todos_los_días_-_Cultura_Colectiva-removebg-preview.png")  
 except Exception as e:
     st.warning(f"Some images could not be loaded. The app will continue without them.")
     animation_lottie = None
