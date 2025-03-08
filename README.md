@@ -1,0 +1,2 @@
+# Education Centre Web App
+ This code creates a website for an educational center named "MOE Learning Centre" using the Streamlit library in Python. Here's a breakdown of what the code does and how it's organized:  Project Description  This project develops a dynamic and visually appealing website for MOE Learning Centre using Streamlit. The website showcases the center's educational services, including tutoring classes, consultation, and academic curriculum.
